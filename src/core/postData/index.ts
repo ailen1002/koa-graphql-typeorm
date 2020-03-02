@@ -24,12 +24,12 @@ const getPostData = (ctx: Context) => {
   })
 }
 
-const KoaBody = async (ctx: Context, next: () => Promise<any>) => {
+const KoaBody =  (ctx: Context, next: () => Promise<any>) => {
   if(/^(POST|PUT)$/.test(ctx.method)) {
-    ctx.fields = await getPostData(ctx)
+    ctx.fields =  getPostData(ctx)
   }
-  // console.log('ctx.fields,', ctx.fields)
-  await next()
+  console.log('ctx.fields,', ctx.fields)
+  next()
 }
 
 export default KoaBody

@@ -6,8 +6,8 @@ import { MongoEntities } from '../entities/mongo'
 
 const _PROD_ = process.env.NODE_ENV === 'production'
 
-const connectDB = (): void => {
-  createConnection({
+const connectDB = async (): Promise<any> => {
+  await createConnection({
     type     : 'mysql',
     host     : MySqlConf.host,
     port     : MySqlConf.port,

@@ -30,7 +30,7 @@ function toString(obj: any) {
   return JSON.stringify(obj);
 }
 
-function base64url(string: string, encoding: string): string {
+function base64url(string: any, encoding: any): string {
   return Buffer
     .from(string, encoding)
     .toString('base64')
